@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaperhub/data/data.dart';
 import 'package:wallpaperhub/widgets/widget.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
-
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  List<CategoriesModel> categories = [];
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +46,11 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-
-            SizedBox(height: 16,),
-
+            SizedBox(
+              height: 16,
+              width: 15,
+              child: CategoriesList(),
+            ),
           ],
         ),
       ),
@@ -51,12 +58,22 @@ class _HomeState extends State<Home> {
   }
 }
 
-
 class CategoriesList extends StatelessWidget {
-  const CategoriesList({super.key});
-
+  final String imgUrl, title;
+  CategoriesList({this.imgUrl, this.title});
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Stack(
+        children: <Widget>[
+          Container(
+            child: Image.network(imgUrl),
+          ),
+          Container(
+            child: Text(title),
+          )
+        ],
+      ),
+    );
   }
 }
