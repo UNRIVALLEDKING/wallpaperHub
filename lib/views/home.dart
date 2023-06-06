@@ -49,18 +49,21 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(
               height: 16,
-              // width: 15,
-              // child: CategoriesList(),
             ),
-            ListView.builder(
-              itemCount: categories.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return CategoriesList(
-                  title: categories[index].categoryName,
-                  imgUrl: categories[index].imgUrl,
-                );
-              },
+            Container(
+              height: 80,
+              child: ListView.builder(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                itemCount: categories.length,
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return CategoriesList(
+                    title: categories[index].categoryName,
+                    imgUrl: categories[index].imgUrl,
+                  );
+                },
+              ),
             )
           ],
         ),
