@@ -11,6 +11,7 @@ class _HomeState extends State<Home> {
   List<CategoriesModel> categories = [];
   @override
   void initState() {
+    categories = getCategories();
     super.initState();
   }
 
@@ -48,9 +49,19 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(
               height: 16,
-              width: 15,
-              child: CategoriesList(),
+              // width: 15,
+              // child: CategoriesList(),
             ),
+            ListView.builder(
+              itemCount: categories.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return CategoriesList(
+                  title: categories[index].categoryName,
+                  imgUrl: categories[index].imgUrl,
+                );
+              },
+            )
           ],
         ),
       ),
@@ -60,7 +71,7 @@ class _HomeState extends State<Home> {
 
 class CategoriesList extends StatelessWidget {
   final String imgUrl, title;
-  CategoriesList({this.imgUrl, this.title});
+  CategoriesList({required this.imgUrl, required this.title});
   @override
   Widget build(BuildContext context) {
     return Container(
