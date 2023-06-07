@@ -85,7 +85,6 @@ class CategoriesList extends StatelessWidget {
           ),
           Container(
             child: Text(title),
-            // hello
           )
         ],
       ),
