@@ -82,26 +82,31 @@ class CategoriesList extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.network(
-                imgUrl,
-                height: 50,
-                width: 100,
-                fit: BoxFit.cover,
-              )),
-          Container(
-            color: Colors.black26,
-            height: 50,
-            width: 100,
-            alignment: Alignment.center,
-            child: Text(
-              title,
-              style: TextStyle(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.network(
+              imgUrl,
+              height: 50,
+              width: 100,
+              fit: BoxFit.cover,
+            ),
+          ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Container(
+              color: Colors.black26,
+              height: 50,
+              width: 100,
+              alignment: Alignment.center,
+              child: Text(
+                title,
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
-                  fontSize: 16),
+                  fontSize: 16,
+                ),
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
