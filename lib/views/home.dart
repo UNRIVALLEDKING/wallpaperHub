@@ -94,6 +94,9 @@ class _HomeState extends State<Home> {
                 height: 2,
               ),
               wallpapersList(wallpapers, context),
+              SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),
