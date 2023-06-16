@@ -43,7 +43,7 @@ Widget wallpapersList(List<WallpaperModel> wallpapers, context) {
     child: GridView.count(
       physics: ClampingScrollPhysics(),
       shrinkWrap: true,
-      crossAxisCount: 2,
+      crossAxisCount: 6,
       childAspectRatio: 0.6,
       mainAxisSpacing: 6.0,
       crossAxisSpacing: 6.0,
